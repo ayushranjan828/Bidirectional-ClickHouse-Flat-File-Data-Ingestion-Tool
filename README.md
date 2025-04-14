@@ -66,3 +66,13 @@ A web-based application that allows data ingestion between ClickHouse and flat f
    The backend will run at http://127.0.0.1:5000
 
    Open your browser and go to: http://127.0.0.1:5000/
+
+✅ Run Docker Commands
+      To build and run the Docker container:
+      
+            # Build the Docker image
+            docker build -t clickhouse-ingestion-tool .
+            
+            # Run the container
+            docker run -p 5000:5000 clickhouse-ingestion-tool
+
