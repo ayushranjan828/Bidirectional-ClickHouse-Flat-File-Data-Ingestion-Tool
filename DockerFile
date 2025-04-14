@@ -1,0 +1,29 @@
+# Base Image
+FROM python:3.10-slim
+
+# Set working directory
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && \
+    apt-get install -y curl && \
+    apt-get clean
+
+# Copy backend and frontend code
+COPY backend/ backend/
+COPY frontend/ frontend/
+COPY requirements.txt .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Expose the port Flask will run on
+EXPOSE 5000
+
+# Set environment variables for Flask
+ENV FLASK_APP=backend/app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_ENV=development
+
+# Run the Flask application
+CMD ["flask", "run"]
