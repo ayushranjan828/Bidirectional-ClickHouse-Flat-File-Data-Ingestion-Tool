@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Ingestion Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Data Ingestion Tool</h1>
+        <div>
+            <label for="source">Select Source:</label>
+            <select id="source">
+                <option value="ClickHouse">ClickHouse</option>
+                <option value="FlatFile">Flat File</option>
+            </select>
+        </div>
+        <div id="clickhouse-config">
+            <input type="text" id="host" placeholder="Host">
+            <input type="text" id="port" placeholder="Port">
+            <input type="text" id="user" placeholder="User">
+            <input type="text" id="jwt_token" placeholder="JWT Token">
+        </div>
+        <div id="flatfile-config">
+            <input type="file" id="flatfile" placeholder="Choose Flat File">
+            <input type="text" id="delimiter" placeholder="Delimiter">
+        </div>
+        <button onclick="connect()">Connect</button>
+        <div id="column-list"></div>
+        <button onclick="ingest()">Start Ingestion</button>
+        <div id="status"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
