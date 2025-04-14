@@ -31,6 +31,7 @@ A web-based application that allows data ingestion between ClickHouse and flat f
       Authentication: JWT (passed via headers)
 
 📁 Project Structure
+
       project/
       ├── backend/
       │   ├── app.py
