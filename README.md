@@ -47,9 +47,8 @@ A web-based application that allows data ingestion between ClickHouse and flat f
 
 ⚙️ Setup Instructions
    ✅ Prerequisites
-         Python 3.7+
-         
-         Pip package manager
+               Python 3.7+
+               Pip package manager
 
 📦 Installation
    Create a virtual environment 
